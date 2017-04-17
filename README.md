@@ -1,28 +1,38 @@
-# EmployeeRecord
+Employee Record with Angular 2
+=================================
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
-## Development server
+#### 1. Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+*nodejs* must be installed on your system and the below global node packages must be installed:
 
-## Code scaffolding
+- angular-cli 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+> npm install -g @angular/cli
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Clone the repository 
 
-## Running unit tests
+> $ git clone https://github.com/planetofwebdesign/Employee-Record.git
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Nevigate to `Employee-Record` directory 
 
-## Running end-to-end tests
+> cd Employee-Record
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
 
-## Further help
+#### 3. Installing dependencies
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Install dependencies by running the following command:
+
+> npm install
+
+
+#### 5. Starting the application
+
+Start the application by running the following command:
+
+> ng serve
+
+ Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
