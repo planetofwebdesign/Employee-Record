@@ -21,14 +21,14 @@ Nevigate to `Employee-Record` directory
 > cd Employee-Record
 
 
-#### 3. Installing dependencies
+#### 2. Installing dependencies
 
 Install dependencies by running the following command:
 
 > npm install
 
 
-#### 5. Starting the application
+#### 3. Starting the application
 
 Start the application by running the following command:
 
