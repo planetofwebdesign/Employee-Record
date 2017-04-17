@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { EmployeeModel } from '../models/employeeModel';
-
+import { SearchService } from '../services/searchAndFilter.service';
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
@@ -11,50 +11,27 @@ export class EmployeeComponent implements OnInit {
 
   employeesData: EmployeeModel[];
 
-  constructor() { 
+  constructor( private searchService: SearchService) { 
 
-  	this.employeesData = [{
-					"id": 1,
-					"name": "Jhon",
-					"phone": "9999999999",
-					"address":
-					{
-					"city": "Pune",
-					"address_line1":"ABC road",
-					"address_line2":"XYZ building",
-					"postal_code":"12455"
-					}
-					}, {"id": 2,
-					"name": "Jacob",
-					"phone": "AZ99A99PQ9",
-					"address":
-					{
-					"city": "Pune",
-					"address_line1":"PQR road",
-					"address_line2":"ABC building",
-					"postal_code":"13455"
-					}
-					}, {
-					"id": 3,
-					"name": "Ari",
-					"phone": "145458522",
-					"address":
-					{
-					"city": "Mumbai",
-					"address_line1":"ABC road",
-					"address_line2":"XYZ building",
-					"postal_code":"12455"
-					}
-	}];
+  	this.employeesData = this.searchService.getEmployees();
+
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
 
 
   checkPhoneNumber(phoneNo: string) : boolean {
 
   		return /^\d+$/.test(phoneNo)
+
+  }
+
+
+  searchEmplyees(searchStr : string): void {
+  		 
+  		 this.employeesData = this.searchService.searchEmployees(searchStr);
+  		
 
   }
   

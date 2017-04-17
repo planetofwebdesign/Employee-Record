@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { AddEmpolyeeComponent } from './add-empolyee/add-empolyee.component';
+import { SearchService } from './services/searchAndFilter.service';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AddEmpolyeeComponent } from './add-empolyee/add-empolyee.component';
     routing
    ],
   providers: [
+    SearchService,
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]

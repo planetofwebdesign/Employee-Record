@@ -2,54 +2,68 @@
 	<div class="panel panel-default">
   		<div class="panel-heading">All Employees</div>
   		<div class="panel-body">
-  			
+  				<div class="search" >
+  					<input type="text" id="searchStr" name="searchStr" 
+						#searchStr
+						(keyDown.enter)="searchEmplyees(searchStr.value)"
+  					>
+  				</div>
   				
-  			
-				<table class="table table-striped table-bordered">
-					
-					<thead>
-						<tr>
-							<th>Id</th>
-							<th>Name</th>
-							<th>Phone</th>
-							<th>City</th>
-							<th>Address 1</th>
-							<th>Address 2</th>
-							<th>Postal Code</th>
-						</tr>
-					</thead>
-					<tbody>
-				
-						<tr *ngFor = "let employee of employeesData"> 
-							<td>{{employee.id}}</td>
-							<td >
-								{{employee.name}}
-							</td>
-							<td *ngIf="checkPhoneNumber(employee.phone)">
-									{{employee.phone}}
-							</td>
-							<td *ngIf="!checkPhoneNumber(employee.phone)">
-									NA
-							</td>
+  				<div *ngIf="employeesData">
+  					<div *ngIf="!employeesData.length">
+				  	  No Records to display
+				 	</div>
+					<div *ngIf="employeesData.length">
+						
+						<table class="table table-striped table-bordered">
+								
+								<thead>
+									<tr>
+										<th>Id</th>
+										<th>Name</th>
+										<th>Phone</th>
+										<th>City</th>
+										<th>Address 1</th>
+										<th>Address 2</th>
+										<th>Postal Code</th>
+									</tr>
+								</thead>
+								<tbody>
 							
-							<td >
-								{{employee.address.city}}
-							</td>
-							<td>
-								{{employee.address.address_line1}}
-							</td>
-							<td>
-								{{employee.address.address_line2}}
-							</td>
-							<td>
-								{{employee.address.postal_code}}
-							</td>
-						</tr>
-						
-						
-					</tbody>
-				</table>
+									<tr *ngFor = "let employee of employeesData"> 
+										<td>{{employee.id}}</td>
+										<td >
+											{{employee.name}}
+										</td>
+										<td *ngIf="checkPhoneNumber(employee.phone)">
+												{{employee.phone}}
+										</td>
+										<td *ngIf="!checkPhoneNumber(employee.phone)">
+												NA
+										</td>
+										
+										<td >
+											{{employee.address.city}}
+										</td>
+										<td>
+											{{employee.address.address_line1}}
+										</td>
+										<td>
+											{{employee.address.address_line2}}
+										</td>
+										<td>
+											{{employee.address.postal_code}}
+										</td>
+									</tr>
+									
+									
+								</tbody>
+							</table>
 			
+
+					</div>
+  				</div>
+				
 
   		</div>
 	</div>
