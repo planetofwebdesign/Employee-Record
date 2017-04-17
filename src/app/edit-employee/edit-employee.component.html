@@ -20,8 +20,7 @@
 						[formControl]="editEmployeeForm.controls['name']"
 						/>
 
-						<div *ngIf="!editEmployeeForm.controls['name'].valid &&
-							editEmployeeForm.controls['name'].touched"
+						<div *ngIf="!editEmployeeForm.controls['name'].valid"
 						>
 								<div *ngIf="editEmployeeForm.controls['name'].hasError('required')" 
 								class="alert alert-danger">Name is Required.
@@ -38,8 +37,7 @@
 						tabindex="1"
 						[formControl]="editEmployeeForm.controls['phone']"
 						 />
-						 <div *ngIf="!editEmployeeForm.controls['phone'].valid &&
-							editEmployeeForm.controls['phone'].touched"
+						 <div *ngIf="!editEmployeeForm.controls['phone'].valid "
 							>
 
 								 <div *ngIf="editEmployeeForm.controls['phone'].hasError('required')" class="alert alert-danger">Phone number is required.</div>
@@ -77,7 +75,9 @@
 						 />
 					</div>
 					
-					<button type="submit" class="btn btn-primary pull-right">Update</button>
+					<button type="submit" class="btn btn-primary pull-right"
+
+					[disabled]="!editEmployeeForm.valid" >Update</button>
 
 				</form>
 
