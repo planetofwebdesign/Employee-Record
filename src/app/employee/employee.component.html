@@ -7,7 +7,14 @@
 						#searchStr
 						(keyDown.enter)="searchEmplyees(searchStr.value)"
   					>
+
+  					<button class="btn btn-primary pull-right search">
+  						<a class="plainLink" [routerLink]="['/employees/add']" >Add Employee</a>
+  					</button>
+
   				</div>
+
+  				
   				
   				<div *ngIf="employeesData">
   					<div *ngIf="!employeesData.length">
@@ -26,6 +33,7 @@
 										<th>Address 1</th>
 										<th>Address 2</th>
 										<th>Postal Code</th>
+										<th>Edit</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -53,6 +61,11 @@
 										</td>
 										<td>
 											{{employee.address.postal_code}}
+										</td>
+										<td>
+											<a [routerLink]="['/employees/edit',employee.id]">
+											Edit
+											</a>
 										</td>
 									</tr>
 									

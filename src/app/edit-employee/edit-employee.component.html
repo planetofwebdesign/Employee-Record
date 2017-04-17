@@ -1,30 +1,33 @@
 <div class="container-fluid">
 	<div class="panel panel-default">
-  		<div class="panel-heading success">Add Employee</div>
+  		<div class="panel-heading success">Update Employee</div>
 	  		<div class="panel-body ">
 				<div class="container container-form">
 				<form class="form-horizontal"
-						[formGroup]="addEmployeeForm"
-						(ngSubmit)="onSubmit(addEmployeeForm.value)"
+						[formGroup]="editEmployeeForm"
+						(ngSubmit)="onUpdate(editEmployeeForm.value)"
 				>
 
 				
 					
+					<input type="hidden" name="id" id="id1" class="form-control" tabindex="1" 
+						[formControl]="editEmployeeForm.controls['id']"
+						/>
 
 					<div class="form-group">
 						<label for="name">Name:</label>
 						<input type="text" name="name" id="name" class="form-control" tabindex="1" 
-						[formControl]="addEmployeeForm.controls['name']"
+						[formControl]="editEmployeeForm.controls['name']"
 						/>
 
-						<div *ngIf="!addEmployeeForm.controls['name'].valid &&
-							addEmployeeForm.controls['name'].touched"
+						<div *ngIf="!editEmployeeForm.controls['name'].valid &&
+							editEmployeeForm.controls['name'].touched"
 						>
-								<div *ngIf="addEmployeeForm.controls['name'].hasError('required')" 
+								<div *ngIf="editEmployeeForm.controls['name'].hasError('required')" 
 								class="alert alert-danger">Name is Required.
 								</div>
 
-								<div *ngIf="addEmployeeForm.controls['name'].hasError('minlength')"
+								<div *ngIf="editEmployeeForm.controls['name'].hasError('minlength')"
 								 class="alert alert-danger">Minimum length for this field is 4.
 								 </div>
 						</div>
@@ -33,15 +36,15 @@
 						<label for="phone">Phone:</label>
 						<input type="text" name="phone" id="phone" class="form-control" 
 						tabindex="1"
-						[formControl]="addEmployeeForm.controls['phone']"
+						[formControl]="editEmployeeForm.controls['phone']"
 						 />
-						 <div *ngIf="!addEmployeeForm.controls['phone'].valid &&
-							addEmployeeForm.controls['phone'].touched"
+						 <div *ngIf="!editEmployeeForm.controls['phone'].valid &&
+							editEmployeeForm.controls['phone'].touched"
 							>
 
-								 <div *ngIf="addEmployeeForm.controls['phone'].hasError('required')" class="alert alert-danger">Phone number is required.</div>
+								 <div *ngIf="editEmployeeForm.controls['phone'].hasError('required')" class="alert alert-danger">Phone number is required.</div>
 
-								 <div *ngIf="addEmployeeForm.controls['phone'].hasError('invalidNumber')" 
+								 <div *ngIf="editEmployeeForm.controls['phone'].hasError('invalidNumber')" 
 								 class="alert alert-danger">Please enter numeric value for phone number.
 								 </div>
 						</div>
@@ -49,32 +52,32 @@
 					<div class="form-group">
 						<label for="city">City:</label>
 						<input type="text" name="city" id="city" class="form-control" tabindex="1"
-						[formControl]="addEmployeeForm.controls['city']"
+						[formControl]="editEmployeeForm.controls['city']"
 						 />
 					</div>
 					<div class="form-group">
 						<label for="address1">Address line 1:</label>
 						<textarea cols="20" rows="4" name="address1" id="address1" 
 								class="form-control" tabindex="1" 
-								[formControl]="addEmployeeForm.controls['address1']"
+								[formControl]="editEmployeeForm.controls['address1']"
 						></textarea>
 					</div>
 					<div class="form-group">
 						<label for="address2">Address line 2:</label>
 						<textarea cols="20" rows="4" name="address2" id="address2" 
 							class="form-control"  tabindex="1" 
-							[formControl]="addEmployeeForm.controls['address2']"
+							[formControl]="editEmployeeForm.controls['address2']"
 						></textarea>
 					</div>
 					<div class="form-group">
 						<label for="postal_code">Postal code:</label>
 						<input type="text" name="postal_code" id="postal_code"
 						 	class="form-control" tabindex="1"
-							[formControl]="addEmployeeForm.controls['postal_code']"
+							[formControl]="editEmployeeForm.controls['postal_code']"
 						 />
 					</div>
 					
-					<button type="submit" class="btn btn-primary pull-right">Submit</button>
+					<button type="submit" class="btn btn-primary pull-right">Update</button>
 
 				</form>
 

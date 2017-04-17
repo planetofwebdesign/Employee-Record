@@ -2,3 +2,20 @@
 .search{
 	margin-bottom: 10px;
 }
+
+
+.plainLink{
+	color:  white;
+	text-decoration: none;
+}
+
+.plainLink:hover{
+	color:  white;
+	text-decoration: none;
+}
+
+.container-form{
+	width: 50%;
+	margin:  0 auto;
+}
+
